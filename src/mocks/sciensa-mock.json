@@ -1,0 +1,98 @@
+{
+   "mockData": {
+      "idConta": 5789765,
+      "produtos": {
+         "fundos": {
+            "porcentagemCarteira": 50,
+            "produto": "Fundos de Investimento",
+            "qtdAtivos": 5,
+            "valorBruto": 386094134,
+            "valorLiquido": 386094134,
+            "listaAtivos": [
+               {
+                  "porcentagem": 20,
+                  "ativo": "Brasil Plural Crédito Corporativo II FIC FIM Crédito Privado",
+                  "quantidade": 10,
+                  "dataPosicao": "2021-04-31T00:00:00",
+                  "taxa": "99",
+                  "indexador": "CDI",
+                  "emissor": "Brasil Plural",
+                  "dataVencimento": "2021-04-31T00:00:00",
+                  "valorBruto": 1000000,
+                  "listaClientes": [
+                     {
+                        "porcentagem": 20,
+                        "nomeCliente": "Fernanda Maciel Algazal",
+                        "quantidade": 100,
+                        "valorBruto": 1000000
+                     },
+                     {
+                        "porcentagem": 20,
+                        "nomeCliente": "Fernanda Maciel Algazal",
+                        "quantidade": 100,
+                        "valorBruto": 1000000
+                     }
+                  ]
+               },
+               {
+                  "porcentagem": 20,
+                  "ativo": "Brasil Plural Crédito Corporativo II FIC FIM Crédito Privado",
+                  "quantidade": 10,
+                  "dataPosicao": "2021-04-31T00:00:00",
+                  "taxa": "99",
+                  "indexador": "CDI",
+                  "emissor": "Brasil Plural",
+                  "dataVencimento": "2021-04-31T00:00:00",
+                  "valorBruto": 1000000,
+                  "listaClientes": [
+                     {
+                        "porcentagem": 20,
+                        "nomeCliente": "Fernanda Maciel Algazal",
+                        "quantidade": 100,
+                        "valorBruto": 1000000
+                     },
+                     {
+                        "porcentagem": 20,
+                        "nomeCliente": "Fernanda Maciel Algazal",
+                        "quantidade": 100,
+                        "valorBruto": 1000000
+                     }
+                  ]
+               }
+            ]
+         },
+         "acoesFuturos": {
+            "porcentagemCarteira": 50,
+            "produto": "Ações e Futuros",
+            "qtdAtivos": 5,
+            "valorBruto": 386094134,
+            "valorLiquido": 386094134,
+            "listaAtivos": []
+         },
+         "rendaFixa": {
+            "porcentagemCarteira": 50,
+            "produto": "Renda Fixa",
+            "qtdAtivos": 5,
+            "valorBruto": 386094134,
+            "valorLiquido": 386094134,
+            "listaAtivos": []
+         },
+         "tesouro": {
+            "porcentagemCarteira": 50,
+            "produto": "Tesouro",
+            "qtdAtivos": 5,
+            "valorBruto": 386094134,
+            "valorLiquido": 386094134,
+            "listaAtivos": []
+         },
+         "previdencia": {
+            "porcentagemCarteira": 50,
+            "produto": "Previdência",
+            "qtdAtivos": 5,
+            "valorBruto": 386094134,
+            "valorLiquido": 386094134,
+            "listaAtivos": []
+         }
+      }
+   }
+}

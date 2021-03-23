@@ -1,0 +1,53 @@
+@import "src/styles/variables";
+
+.content-navigation {
+  height: 54px;
+  background-color: $dark;
+  margin-top: $navbar-height + 79px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 16.5px;
+  box-shadow: 0px 4px 8px rgba(54, 77, 205, 0.15);
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+
+    li {
+      cursor: pointer;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 24px;
+        background-color: #ffffff;
+        border-radius: 40px;
+        bottom: -4px;
+        left: 0;
+        opacity: 0;
+        transition: opacity $standard-transition;
+      }
+
+      &:hover::after {
+        opacity: .5;
+      }
+
+      + li {
+        margin-left: 24px;
+      }
+
+      &.active {
+        font-weight: 600;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

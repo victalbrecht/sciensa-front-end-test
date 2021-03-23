@@ -1,0 +1,119 @@
+@import "src/styles/variables";
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: $navbar-bg;
+  height: $navbar-height;
+  box-shadow: $navbar-box-shadow;
+
+  .input-group {
+    width: 344px;
+  }
+
+  .navbar-panel {
+    @extend %flex-center;
+
+    > * {
+      cursor: pointer;
+      transition: box-shadow $standard-transition;
+    }
+
+    .panel-group {
+      @extend %flex-center;
+      font-weight: 300;
+      background: #ffffff;
+      height: 38px;
+    }
+
+    .hide-values {
+      width: 159px;
+      border-radius: 100px;
+      box-shadow: 1px 0px 6px rgba(54, 77, 205, 0.05);
+
+      &:hover {
+        box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.1);
+      }
+
+      > span {
+        @extend %flex-center;
+        margin-left: 13px;
+        width: 18px;
+        height: 18px;
+        color: #ffffff;
+        background-color: #dadada;
+        border-radius: 50%;
+        font-size: 8px;
+      }
+    }
+
+    .notifications {
+      margin-left: 17px;
+      position: relative;
+      width: 19px;
+      height: 27px;
+      font-size: 25px;
+      position: relative;
+
+      > span {
+        color: $dark;
+      }
+
+      .counter {
+        @extend %flex-center;
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        background-color: #e23535;
+        font-weight: 700;
+        font-size: 5px;
+        color: #ffffff;
+        line-height: 6px;
+        border-radius: 50%;
+        right: -7px;
+        bottom: 3px;
+      }
+    }
+
+    .info {
+      @extend %flex-center;
+      margin-left: 36px;
+      width: 104px;
+      border-radius: 45px;
+      box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.1);
+
+      &:hover {
+        box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.2);
+      }
+
+      > span {
+        margin-left: 6px;
+        width: 8px;
+        height: 8px;
+        font-size: 10px;
+        color: #3047c7;
+      }
+    }
+
+    .avatar {
+      @extend %flex-center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: #ffffff;
+      font-weight: 700;
+      background: $dark;
+      box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.1);
+      margin-left: 12px;
+      text-transform: uppercase;
+
+      &:hover {
+        box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.2);
+      }
+    }
+  }
+}
