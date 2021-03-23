@@ -4,6 +4,10 @@
 
 * {
   line-height: 21px;
+
+  &:not(input) {
+    user-select: none;
+  }
 }
 
 body {
@@ -14,6 +18,10 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+
+  li:focus {
+    outline: none;
+  }
 }
 
 .input-group {
@@ -35,7 +43,8 @@ ul {
     position: relative;
 
     .form-control {
-      padding-right: 56px;
+      height: auto;
+      padding: 8px 56px 9px 24px;
     }
 
     &::after {
@@ -54,8 +63,10 @@ ul {
 }
 
 .btn,
-.btn:hover {
+.btn:hover,
+.btn:focus {
   color: $btn-color;
   text-transform: $btn-text-transform;
   letter-spacing: $btn-letter-specing;
+  box-shadow: $btn-focus-box-shadow;
 }

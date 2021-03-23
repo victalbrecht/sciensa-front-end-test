@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  jsonServerMockApi: 'localhost:3000'
+  jsonServerMockApi: 'http://localhost:3000/mockData'
 };
 
 /*

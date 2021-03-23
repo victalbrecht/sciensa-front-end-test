@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ClientsModule } from './clients/clients.module';
+import { ClientsModule } from './modules/clients/clients.module';
 import { DashboardComponent } from './dashboard.component';
-import { OverviewModule } from './overview/overview.module';
-import { PartnersAssessmentModule } from './partners-assessment/partners-assessment.module';
-import { ProductsModule } from './products/products.module';
-import { RevenuesModule } from './revenues/revenues.module';
+import { OverviewModule } from './modules/overview/overview.module';
+import { PartnersAssessmentModule } from './modules/partners-assessment/partners-assessment.module';
+import { ProductsModule } from './modules/products/products.module';
+import { RevenuesModule } from './modules/revenues/revenues.module';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
       {
         path: 'overview',
         loadChildren: async (): Promise<OverviewModule> =>
-          (await import('./overview/overview.module')).OverviewModule,
+          (await import('./modules/overview/overview.module')).OverviewModule,
       },
       {
         path: 'products',
@@ -25,17 +25,17 @@ const routes: Routes = [
       {
         path: 'revenues',
         loadChildren: async (): Promise<RevenuesModule> =>
-          (await import('./revenues/revenues.module')).RevenuesModule,
+          (await import('./modules/revenues/revenues.module')).RevenuesModule,
       },
       {
         path: 'clients',
         loadChildren: async (): Promise<ClientsModule> =>
-          (await import('./clients/clients.module')).ClientsModule,
+          (await import('./modules/clients/clients.module')).ClientsModule,
       },
       {
         path: 'partners-assessment',
         loadChildren: async (): Promise<PartnersAssessmentModule> =>
-          (await import('./partners-assessment/partners-assessment.module'))
+          (await import('./modules/partners-assessment/partners-assessment.module'))
             .PartnersAssessmentModule,
       },
     ],

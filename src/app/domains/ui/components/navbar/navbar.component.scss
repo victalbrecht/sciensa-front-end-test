@@ -27,11 +27,10 @@
       @extend %flex-center;
       font-weight: 300;
       background: #ffffff;
-      height: 38px;
     }
 
     .hide-values {
-      width: 159px;
+      padding: 8px 16px;
       border-radius: 100px;
       box-shadow: 1px 0px 6px rgba(54, 77, 205, 0.05);
 
@@ -82,7 +81,7 @@
     .info {
       @extend %flex-center;
       margin-left: 36px;
-      width: 104px;
+      padding: 8px 10px;
       border-radius: 45px;
       box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.1);
 

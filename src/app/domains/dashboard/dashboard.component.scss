@@ -1,13 +1,11 @@
 @import "src/styles/variables";
 
 .dashboard {
-  height: 54px;
   background-color: $dark;
   margin-top: $navbar-height + 79px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 24px;
   padding-right: 16.5px;
   box-shadow: 0px 4px 8px rgba(54, 77, 205, 0.15);
 
@@ -15,6 +13,7 @@
     display: flex;
     align-items: center;
     color: #ffffff;
+    padding: 14px 16.5px 19px 24px;
 
     li {
       cursor: pointer;
@@ -49,10 +48,13 @@
         }
       }
     }
-
-    + .wallet-btn {
-      width: 175px;
-      height: 34px;
-    }
   }
+
+  .wallet-btn {
+    padding: 8px 16px;
+  }
+}
+
+.dash {
+  padding: 23px 120px 80px;
 }
