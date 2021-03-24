@@ -40,27 +40,35 @@
     </a>
   </div>
 </section>
-<div class="animation-wrapper" *ngIf="expandedCard" @collapse>
+<div *ngIf="expandedCard" @collapse>
   <section
     @collapse
     *ngIf="expandedCard"
     class="assets-filters-card"
-    [ngClass]="{ 'justify-content-end': openedFilters }"
+    [ngClass]="{ 'open-filters': openFilters }"
   >
-    <a
-      type="button"
-      class="toggle-filters"
-      (click)="openedFilters = !openedFilters"
-    >
-      <span
-        class="fas"
-        [ngClass]="openedFilters ? 'fa-filter' : 'fa-funnel-dollar'"
-      ></span>
-      <h6>
-        {{ openedFilters ? ("Fechar filtros" | uppercase) : "Abrir filtros" }}
-      </h6>
-    </a>
-    <div class="filters" *ngIf="openedFilters"></div>
+    <div class="toggle-filters-wrapper">
+      <a
+        type="button"
+        class="toggle-filters"
+        (click)="openFilters = !openFilters"
+      >
+        <span
+          class="fas"
+          [ngClass]="openFilters ? 'fa-filter' : 'fa-funnel-dollar'"
+        ></span>
+        <h6>
+          {{ openFilters ? ("Fechar filtros" | uppercase) : "Abrir filtros" }}
+        </h6>
+      </a>
+    </div>
+    <div class="filters" *ngIf="openFilters" @collapse>
+      <div class="d-flex">
+        <div class="filter-wrapper">
+          <span class="filter-title">Perfil do investimento:</span>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="assets-table-card">
     <table class="table assets-table">
@@ -95,7 +103,9 @@
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let asset of productData.product.listaAtivos; let i = index">
+        <ng-container
+          *ngFor="let asset of productData.product.listaAtivos; let i = index"
+        >
           <tr>
             <td>{{ asset.porcentagem }}%</td>
             <td>{{ asset.ativo }}</td>
@@ -167,7 +177,10 @@
                       </td>
                       <td></td>
                     </tr>
-                    <tr class="middle-row" *ngIf="i < (asset.listaClientes.length - 1)">
+                    <tr
+                      class="middle-row"
+                      *ngIf="i < asset.listaClientes.length - 1"
+                    >
                       <th></th>
                       <th><h5>Ativo/classificação</h5></th>
                       <th></th>

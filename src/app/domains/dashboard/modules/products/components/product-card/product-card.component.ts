@@ -1,4 +1,4 @@
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -12,8 +12,8 @@ import { UiService } from 'src/app/domains/ui/services/ui/ui.service';
   styleUrls: ['./product-card.component.scss'],
   animations: [
     trigger('collapse', [
-      transition(':enter', [style({ height: 0 }), animate('.3s ease-in-out')]),
-      transition(':leave', [animate('.3s ease-in-out', style({ height: 0 }))]),
+      transition(':enter', [style({ height: 0, overflow: 'hidden' }), animate('.3s ease-in-out')]),
+      transition(':leave', [animate('.3s ease-in-out', style({ height: 0, overflow: 'hidden' }))]),
     ]),
   ],
 })
@@ -22,7 +22,7 @@ export class ProductCardComponent {
 
   public hidingValues: BehaviorSubject<boolean> = this.uiService.hidingValues;
   public expandedCard: boolean;
-  public openedFilters: boolean;
+  public openFilters: boolean;
 
   public constructor(private uiService: UiService) {}
 }
