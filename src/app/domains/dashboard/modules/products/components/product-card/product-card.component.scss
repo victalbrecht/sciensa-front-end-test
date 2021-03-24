@@ -78,8 +78,15 @@ $investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
   &.open-filters {
     padding: 16px 24px 24px;
 
-    .toggle-filters-wrapper {
-      justify-content: flex-end;
+    .toggle-filters {
+      &-wrapper {
+        justify-content: flex-end;
+      }
+
+      &-label {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
     }
   }
 

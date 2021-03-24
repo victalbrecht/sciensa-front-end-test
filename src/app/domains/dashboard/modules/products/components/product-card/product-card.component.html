@@ -61,8 +61,8 @@
           class="fas"
           [ngClass]="openFilters ? 'fa-filter' : 'fa-funnel-dollar'"
         ></span>
-        <h6>
-          {{ openFilters ? ("Fechar filtros" | uppercase) : "Abrir filtros" }}
+        <h6 class="toggle-filters-label">
+          {{ openFilters ? "Fechar filtros" : "Abrir filtros" }}
         </h6>
       </a>
     </div>
