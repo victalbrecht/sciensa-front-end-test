@@ -6,8 +6,8 @@ import { PartnersAssessmentComponent } from './partners-assessment.component';
 const routes: Routes = [
   {
     path: '',
-    component: PartnersAssessmentComponent
-  }
+    component: PartnersAssessmentComponent,
+  },
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@ import { DashboardModule } from './domains/dashboard/dashboard.module';
 
 const routes: Routes = [
   { path: 'dashboard', loadChildren: () => DashboardModule },
-  { path: '**', redirectTo: 'dashboard/products' }
+  { path: '**', redirectTo: 'dashboard/products' },
 ];
 
 @NgModule({

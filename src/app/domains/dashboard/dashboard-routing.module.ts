@@ -35,11 +35,14 @@ const routes: Routes = [
       {
         path: 'partners-assessment',
         loadChildren: async (): Promise<PartnersAssessmentModule> =>
-          (await import('./modules/partners-assessment/partners-assessment.module'))
-            .PartnersAssessmentModule,
+          (
+            await import(
+              './modules/partners-assessment/partners-assessment.module'
+            )
+          ).PartnersAssessmentModule,
       },
     ],
-  }
+  },
 ];
 
 @NgModule({

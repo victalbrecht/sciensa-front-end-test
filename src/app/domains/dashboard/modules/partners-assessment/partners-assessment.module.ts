@@ -6,6 +6,6 @@ import { PartnersAssessmentRoutingModule } from './partners-assessment-routing.m
 
 @NgModule({
   declarations: [PartnersAssessmentComponent],
-  imports: [CommonModule, PartnersAssessmentRoutingModule]
+  imports: [CommonModule, PartnersAssessmentRoutingModule],
 })
-export class PartnersAssessmentModule { }
+export class PartnersAssessmentModule {}

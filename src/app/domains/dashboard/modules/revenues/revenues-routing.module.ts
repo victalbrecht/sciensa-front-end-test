@@ -6,8 +6,8 @@ import { RevenuesComponent } from './revenues.component';
 const routes: Routes = [
   {
     path: '',
-    component: RevenuesComponent
-  }
+    component: RevenuesComponent,
+  },
 ];
 
 @NgModule({

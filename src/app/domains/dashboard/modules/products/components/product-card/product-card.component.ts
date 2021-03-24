@@ -12,8 +12,13 @@ import { UiService } from 'src/app/domains/ui/services/ui/ui.service';
   styleUrls: ['./product-card.component.scss'],
   animations: [
     trigger('collapse', [
-      transition(':enter', [style({ height: 0, overflow: 'hidden' }), animate('.3s ease-in-out')]),
-      transition(':leave', [animate('.3s ease-in-out', style({ height: 0, overflow: 'hidden' }))]),
+      transition(':enter', [
+        style({ height: 0, overflow: 'hidden' }),
+        animate('.3s ease-in-out'),
+      ]),
+      transition(':leave', [
+        animate('.3s ease-in-out', style({ height: 0, overflow: 'hidden' })),
+      ]),
     ]),
   ],
 })

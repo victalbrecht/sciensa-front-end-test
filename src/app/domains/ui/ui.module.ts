@@ -7,6 +7,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   declarations: [NavbarComponent],
   imports: [CommonModule, SharedModule],
-  exports: [NavbarComponent]
+  exports: [NavbarComponent],
 })
-export class UiModule { }
+export class UiModule {}

@@ -6,6 +6,6 @@ import { OverviewRoutingModule } from './overview-routing.module';
 
 @NgModule({
   declarations: [OverviewComponent],
-  imports: [CommonModule, OverviewRoutingModule]
+  imports: [CommonModule, OverviewRoutingModule],
 })
-export class OverviewModule { }
+export class OverviewModule {}

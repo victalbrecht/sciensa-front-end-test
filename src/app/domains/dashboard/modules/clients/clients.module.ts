@@ -6,6 +6,6 @@ import { ClientsRoutingModule } from './clients-routing.module';
 
 @NgModule({
   declarations: [ClientsComponent],
-  imports: [CommonModule, ClientsRoutingModule]
+  imports: [CommonModule, ClientsRoutingModule],
 })
 export class ClientsModule {}

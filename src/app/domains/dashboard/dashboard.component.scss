@@ -16,11 +16,11 @@
       align-items: center;
       color: #ffffff;
       padding: 14px 16.5px 19px 24px;
-  
+
       li {
         cursor: pointer;
         position: relative;
-  
+
         &::after {
           content: "";
           position: absolute;
@@ -33,25 +33,25 @@
           opacity: 0;
           transition: opacity $standard-transition;
         }
-  
+
         &:hover::after {
           opacity: 0.5;
         }
-  
+
         + li {
           margin-left: 24px;
         }
-  
+
         &.active {
           font-weight: 600;
-  
+
           &::after {
             opacity: 1;
           }
         }
       }
     }
-  
+
     .wallet-btn {
       padding: 8px 16px;
     }

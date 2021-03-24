@@ -15,7 +15,9 @@ export class NavbarComponent implements OnInit {
   public constructor(private uiService: UiService) {}
 
   public ngOnInit(): void {
-    this.uiService.hidingValues.subscribe((hidingValues: boolean) => this.hidingValues = hidingValues);
+    this.uiService.hidingValues.subscribe(
+      (hidingValues: boolean) => (this.hidingValues = hidingValues)
+    );
   }
 
   public toggleValues(): void {

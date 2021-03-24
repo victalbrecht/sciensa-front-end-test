@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'sciensa-test-revenues',
   templateUrl: './revenues.component.html',
-  styleUrls: ['./revenues.component.scss']
+  styleUrls: ['./revenues.component.scss'],
 })
-export class RevenuesComponent implements OnInit {
-
-public   constructor() { }
-
-public   ngOnInit(): void {
-  }
-
-}
+export class RevenuesComponent {}

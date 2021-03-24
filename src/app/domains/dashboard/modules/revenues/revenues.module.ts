@@ -6,6 +6,6 @@ import { RevenuesRoutingModule } from './revenues-routing.module';
 
 @NgModule({
   declarations: [RevenuesComponent],
-  imports: [CommonModule, RevenuesRoutingModule]
+  imports: [CommonModule, RevenuesRoutingModule],
 })
-export class RevenuesModule { }
+export class RevenuesModule {}

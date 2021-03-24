@@ -13,13 +13,11 @@ export class ProductsService {
   public constructor(private http: HttpClient) {}
 
   public getMockData(): Observable<MockData> {
-    return this.http
-      .get<MockData>(`${environment.jsonServerMockApi}`)
-      .pipe(
-        map((mockData: MockData) => ({
-          idConta: mockData.idConta,
-          produtos: Object.values(mockData.produtos),
-        }))
-      );
+    return this.http.get<MockData>(`${environment.jsonServerMockApi}`).pipe(
+      map((mockData: MockData) => ({
+        idConta: mockData.idConta,
+        produtos: Object.values(mockData.produtos),
+      }))
+    );
   }
 }

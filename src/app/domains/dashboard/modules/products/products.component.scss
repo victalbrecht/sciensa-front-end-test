@@ -36,7 +36,8 @@
     color: #575756;
 
     &:hover {
-      &, > span {
+      &,
+      > span {
         color: lighten(#575756, 25%);
       }
     }
