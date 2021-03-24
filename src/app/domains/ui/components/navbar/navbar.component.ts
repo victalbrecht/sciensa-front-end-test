@@ -9,17 +9,17 @@ import { UiService } from '../../services/ui/ui.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  public showingValues: boolean;
+  public hidingValues: boolean;
   public accountId: BehaviorSubject<number> = this.uiService.accountId;
 
   public constructor(private uiService: UiService) {}
 
   public ngOnInit(): void {
-    this.uiService.showingValues.subscribe((showingValues: boolean) => this.showingValues = showingValues);
+    this.uiService.hidingValues.subscribe((hidingValues: boolean) => this.hidingValues = hidingValues);
   }
 
   public toggleValues(): void {
-    this.showingValues = !this.showingValues;
-    this.uiService.showingValues.next(this.showingValues);
+    this.hidingValues = !this.hidingValues;
+    this.uiService.hidingValues.next(this.hidingValues);
   }
 }

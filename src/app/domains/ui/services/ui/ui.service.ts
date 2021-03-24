@@ -5,6 +5,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class UiService {
-  public showingValues: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  public hidingValues: BehaviorSubject<boolean> = new BehaviorSubject(false);
   public accountId: BehaviorSubject<number> = new BehaviorSubject(null);
 }

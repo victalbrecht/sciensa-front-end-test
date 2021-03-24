@@ -12,6 +12,11 @@
 
 body {
   padding-top: $navbar-height;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 a {

@@ -1,10 +1,15 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 
 @Directive({
-  selector: '[sciensaTestHideValue]'
+  selector: '[hideValue]',
 })
-export class HideValueDirective {
+export class HideValueDirective implements OnChanges {
+  @Input() public hideValue: boolean;
 
-  constructor() { }
+  public constructor(public el: ElementRef) {}
 
+  public ngOnChanges(): void {
+      this.el.nativeElement.style.backgroundColor = this.hideValue ? '#ebebeb' : 'initial';
+      this.el.nativeElement.style.color = this.hideValue ? 'transparent' : 'initial';
+  }
 }

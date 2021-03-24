@@ -9,10 +9,10 @@
     </div>
     <div class="navbar-panel">
       <a type="button" class="hide-values panel-group" (click)="toggleValues()">
-        {{ showingValues ? "Esconder" : "Mostrar" }} valores
+        {{ !hidingValues ? "Esconder" : "Mostrar" }} valores
         <span
           class="far"
-          [ngClass]="showingValues ? 'fa-eye-slash' : 'fa-eye'"
+          [ngClass]="!hidingValues ? 'fa-eye-slash' : 'fa-eye'"
         ></span>
       </a>
       <a type="button" class="notifications">

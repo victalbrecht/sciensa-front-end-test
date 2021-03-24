@@ -22,21 +22,17 @@
   <div class="second-section">
     <div class="info-wrapper">
       <h4>Saldo bruto</h4>
-      <span>{{
+      <span [hideValue]="hidingValues | async">{{
         productData.product.valorBruto | preCurrency | currency: "BRL"
       }}</span>
     </div>
     <div class="info-wrapper">
       <h4>Saldo líquido</h4>
-      <span>{{
+      <span [hideValue]="hidingValues | async">{{
         productData.product.valorLiquido | preCurrency | currency: "BRL"
       }}</span>
     </div>
-    <a
-      type="button"
-      class="expand-card-btn"
-      (click)="expandedCard = !expandedCard"
-    >
+    <a type="button" class="action-btn" (click)="expandedCard = !expandedCard">
       <span
         class="fas"
         [ngClass]="expandedCard ? 'fa-angle-down' : 'fa-plus'"
@@ -101,15 +97,30 @@
           <td>{{ asset.porcentagem }}%</td>
           <td>{{ asset.ativo }}</td>
           <td>{{ asset.quantidade }}</td>
-          <td>{{ asset.dataPosicao }}</td>
+          <td>{{ asset.dataPosicao | customDate }}</td>
           <td>{{ asset.taxa }}% do CDI</td>
           <td>{{ asset.emissor }}</td>
-          <td>{{ asset.dataVencimento }}</td>
-          <td>{{ asset.valorBruto | currency: "BRL" : "" }}</td>
+          <td>{{ "2021-04-31" | customDate }}</td>
           <td>
-            <button type="button" class="btn btn-success invest-btn">Investir</button>
+            <span [hideValue]="hidingValues | async">{{ asset.valorBruto | currency: "BRL":"" }}</span>
           </td>
-          <td></td>
+          <td>
+            <button type="button" class="btn btn-success invest-btn">
+              Investir
+            </button>
+          </td>
+          <td>
+            <a
+              type="button"
+              class="action-btn"
+              (click)="expandedAssetCard = !expandedAssetCard"
+            >
+              <span
+                class="fas"
+                [ngClass]="expandedAssetCard ? 'fa-angle-down' : 'fa-plus'"
+              ></span>
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
