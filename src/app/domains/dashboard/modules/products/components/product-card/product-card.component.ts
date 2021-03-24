@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate, state } from '@angular/animations';
 import { Input } from '@angular/core';
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -8,13 +9,20 @@ import { UiService } from 'src/app/domains/ui/services/ui/ui.service';
 @Component({
   selector: 'sciensa-test-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+  styleUrls: ['./product-card.component.scss'],
+  animations: [
+    trigger('collapse', [
+      transition(':enter', [style({ height: 0 }), animate('.3s ease-in-out')]),
+      transition(':leave', [animate('.3s ease-in-out', style({ height: 0 }))]),
+    ]),
+  ],
 })
 export class ProductCardComponent {
   @Input() public productData: { product: Product; index: number };
-  
+
   public hidingValues: BehaviorSubject<boolean> = this.uiService.hidingValues;
   public expandedCard: boolean;
+  public openedFilters: boolean;
 
   public constructor(private uiService: UiService) {}
 }

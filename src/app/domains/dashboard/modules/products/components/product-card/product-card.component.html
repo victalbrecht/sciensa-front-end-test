@@ -40,8 +40,10 @@
     </a>
   </div>
 </section>
-<ng-container *ngIf="expandedCard">
+<div class="animation-wrapper" @collapse *ngIf="expandedCard">
   <section
+    @collapse
+    *ngIf="expandedCard"
     class="assets-filters-card"
     [ngClass]="{ 'justify-content-end': openedFilters }"
   >
@@ -60,7 +62,7 @@
     </a>
     <div class="filters" *ngIf="openedFilters"></div>
   </section>
-  <section class="assets-table-card" *ngIf="expandedCard">
+  <section class="assets-table-card">
     <table class="table">
       <thead>
         <tr>
@@ -100,9 +102,11 @@
           <td>{{ asset.dataPosicao | customDate }}</td>
           <td>{{ asset.taxa }}% do CDI</td>
           <td>{{ asset.emissor }}</td>
-          <td>{{ "2021-04-31" | customDate }}</td>
+          <td>{{ asset.dataVencimento | customDate }}</td>
           <td>
-            <span [hideValue]="hidingValues | async">{{ asset.valorBruto | currency: "BRL":"" }}</span>
+            <span [hideValue]="hidingValues | async">{{
+              asset.valorBruto | currency: "BRL":""
+            }}</span>
           </td>
           <td>
             <button type="button" class="btn btn-success invest-btn">
@@ -125,4 +129,4 @@
       </tbody>
     </table>
   </section>
-</ng-container>
+</div>
