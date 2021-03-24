@@ -32,7 +32,7 @@
         productData.product.valorLiquido | preCurrency | currency: "BRL"
       }}</span>
     </div>
-    <a type="button" class="action-btn" (click)="expandedCard = !expandedCard">
+    <a type="button" class="row-action-btn" (click)="expandedCard = !expandedCard">
       <span
         class="fas"
         [ngClass]="expandedCard ? 'fa-angle-down' : 'fa-plus'"
@@ -328,6 +328,10 @@
           </div>
         </div>
       </div>
+      <div class="filters-action-btns">
+        <button type="button" class="btn btn-clear">Limpar</button>
+        <button type="button" class="btn btn-apply-filter">Aplicar filtro</button>
+      </div>
     </div>
   </section>
   <section class="assets-table-card">
@@ -380,14 +384,14 @@
               }}</span>
             </td>
             <td>
-              <button type="button" class="btn btn-success invest-btn">
+              <button type="button" class="btn btn-success">
                 Investir
               </button>
             </td>
             <td>
               <a
                 type="button"
-                class="action-btn"
+                class="row-action-btn"
                 (click)="asset.showingClients = !asset.showingClients"
               >
                 <span
@@ -430,7 +434,7 @@
                       <td>
                         <button
                           type="button"
-                          class="btn btn-success invest-btn"
+                          class="btn btn-success"
                         >
                           Investir
                         </button>

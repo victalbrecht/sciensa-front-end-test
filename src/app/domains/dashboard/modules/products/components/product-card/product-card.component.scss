@@ -234,6 +234,32 @@ $investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
         }
       }
     }
+
+    &-action-btns {
+      text-align: right;
+
+      .btn {
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+
+        &-clear {
+          background-color: #ffffff;
+          color: $body-color;
+
+          &:hover {
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.16);
+          }
+        }
+
+        &-apply-filter {
+          margin-left: 16px;
+          background-color: #3047c7;
+
+          &:hover {
+            background-color: darken( #3047c7, 10%);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -313,7 +339,7 @@ $investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
   }
 }
 
-.action-btn {
+.row-action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,8 +353,4 @@ $investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
   &:hover {
     box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
   }
-}
-
-.invest-btn {
-  padding: 11px 17px;
 }

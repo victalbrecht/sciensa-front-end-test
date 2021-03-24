@@ -2,7 +2,7 @@ import { HideValueDirective } from './hide-value.directive';
 
 describe('HideValueDirective', () => {
   it('should create an instance', () => {
-    const directive = new HideValueDirective();
+    const directive = new HideValueDirective(null);
     expect(directive).toBeTruthy();
   });
 });
