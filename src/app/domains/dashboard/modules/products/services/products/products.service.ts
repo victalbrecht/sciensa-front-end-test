@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
-import { MockData } from '../../interfaces/mock-data.interface';
+import { MockData } from '../../../../interfaces/mock-data.interface';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardService {
+export class ProductsService {
   public constructor(private http: HttpClient) {}
 
   public getMockData(): Observable<MockData> {

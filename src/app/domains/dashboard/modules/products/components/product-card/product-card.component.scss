@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
 
 .product-card {
@@ -7,7 +9,7 @@ $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
   background: #ffffff;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  transition: margin-bottom .3s ease-in-out;
+  transition: margin-bottom 0.3s ease-in-out;
 
   &:not(.expanded-card) {
     margin-bottom: 32px;
@@ -92,63 +94,77 @@ $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
 }
 
 .assets-table-card {
-  transition: margin-bottom .3s ease-in-out;
+  transition: margin-bottom 0.3s ease-in-out;
   margin-bottom: 32px;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+}
 
-  .table {
-    th,
-    td {
-      min-width: 100px;
-      max-width: 100px;
-      padding: 8px;
+.table {
+  table-layout: fixed;
 
-      &:nth-child(1) {
-        padding-left: 16px;
-        padding-right: 5px;
-      }
+  th {
+    padding: 8px 0 8px 8px;
+  }
 
-      &:nth-child(2) {
-        min-width: 220px;
-        max-width: 220px;
-      }
+  td {
+    padding: 16px 0 16px 8px;
+  }
 
-      &:nth-child(3) {
-        min-width: 75px;
-        max-width: 75px;
-      }
+  th,
+  td {
+    width: 100px;
 
-      &:nth-child(8),
-      &:nth-child(9) {
-        min-width: 150px;
-        max-width: 150px;
-      }
+    &:nth-child(1) {
+      padding-left: 16px;
     }
 
-    td {
-      padding: 16px 8px;
-
-      &:nth-child(1) {
-        padding-left: 16px;
-        padding-right: 55px;
-      }
-
-      &:nth-child(9) {
-        padding: 20px 26px;
-        text-align: center;
-      }
-
-      &:nth-child(10) {
-        padding: 28px 32px;
-
-        > a {
-          float: right;
-        }
-      }
+    &:nth-child(2) {
+      width: 220px;
     }
 
-    .invest-btn {
-      padding: 11px 17px;
+    &:nth-child(8) {
+      width: 150px;
+    }
+
+    &:nth-child(9) {
+      width: 100px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &:nth-child(10) {
+      width: 88px;
+    }
+  }
+
+  td:nth-child(10) {
+    padding: 28px 32px;
+
+    > a {
+      float: right;
+    }
+  }
+}
+
+.assets-table {
+  tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  .clients-table {
+    border-top: 1px solid #ebebeb;
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    td:nth-child(9) {
+      padding: 8px 0;
+    }
+
+    .middle-row {
+      background-color: $table-header-bg;
+      border-top: 5px solid #ffffff;
     }
   }
 }
@@ -167,6 +183,10 @@ $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
   &:hover {
     box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
   }
+}
+
+.invest-btn {
+  padding: 11px 17px;
 }
 
 .animation-wrapper {

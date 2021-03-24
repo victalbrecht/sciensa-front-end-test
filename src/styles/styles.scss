@@ -113,12 +113,10 @@ ul {
 }
 
 .table {
+  margin-bottom: 0;
+  
   tr {
-    background-color: $table-bg-1;
-
-    &:nth-child(even) {
-      background-color: $table-bg-2;
-    }
+    background-color: $table-base-bg;
   }
 
   thead tr {

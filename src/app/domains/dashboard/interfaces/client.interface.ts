@@ -3,4 +3,5 @@ export interface Client {
   nomeCliente: string;
   quantidade: number;
   valorBruto: number;
+  showingClients?: boolean;
 }

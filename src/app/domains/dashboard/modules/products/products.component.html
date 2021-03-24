@@ -11,6 +11,6 @@
   </div>
 </div>
 <sciensa-test-product-card
-  *ngFor="let product of products | async; let i = index"
+  *ngFor="let product of products; let i = index"
   [productData]="{ product: product, index: i }"
 ></sciensa-test-product-card>
