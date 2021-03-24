@@ -1,5 +1,55 @@
-.products-header {
-    display: flex;
+@import "src/styles/variables";
 
-    
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-one {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 15.6px;
+      margin-bottom: 3px;
+    }
+
+    &-two {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  .export-button {
+    font-size: 13px;
+    line-height: 19.5px;
+    margin-right: 104px;
+    color: #575756;
+
+    &:hover {
+      &, > span {
+        color: lighten(#575756, 25%);
+      }
+    }
+
+    > span {
+      width: 13px;
+      height: 11px;
+      margin-right: 7px;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
 }

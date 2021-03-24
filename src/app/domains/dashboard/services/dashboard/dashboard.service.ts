@@ -12,7 +12,7 @@ import { MockData } from '../../interfaces/mock-data.interface';
 export class DashboardService {
   public constructor(private http: HttpClient) {}
 
-  public getProducts(): Observable<MockData> {
+  public getMockData(): Observable<MockData> {
     return this.http
       .get<MockData>(`${environment.jsonServerMockApi}`)
       .pipe(

@@ -8,25 +8,22 @@
       />
     </div>
     <div class="navbar-panel">
-      <div class="hide-values panel-group" (click)="toggleValues()">
+      <a type="button" class="hide-values panel-group" (click)="toggleValues()">
         {{ showingValues ? "Esconder" : "Mostrar" }} valores
         <span
           class="far"
-          [ngClass]="{
-            'fa-eye': !showingValues,
-            'fa-eye-slash': showingValues
-          }"
+          [ngClass]="showingValues ? 'fa-eye-slash' : 'fa-eye'"
         ></span>
-      </div>
-      <div class="notifications">
+      </a>
+      <a type="button" class="notifications">
         <span class="far fa-bell"></span>
         <div class="counter">1</div>
-      </div>
-      <div class="info panel-group">
-        CC 16289-9
+      </a>
+      <a type="button" class="info panel-group">
+        CC {{ accountId | async | accountNumber }}
         <span class="fas fa-chevron-down"></span>
-      </div>
-      <div class="avatar">AP</div>
+      </a>
+      <a type="button" class="avatar">AP</a>
     </div>
   </nav>
 </header>

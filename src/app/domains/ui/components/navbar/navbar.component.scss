@@ -18,11 +18,6 @@
   .navbar-panel {
     @extend %flex-center;
 
-    > * {
-      cursor: pointer;
-      transition: box-shadow $standard-transition;
-    }
-
     .panel-group {
       @extend %flex-center;
       font-weight: 300;
@@ -33,6 +28,7 @@
       padding: 8px 16px;
       border-radius: 100px;
       box-shadow: 1px 0px 6px rgba(54, 77, 205, 0.05);
+      color: $body-color;
 
       &:hover {
         box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.1);
@@ -58,23 +54,19 @@
       font-size: 25px;
       position: relative;
 
-      > span {
-        color: $dark;
-      }
-
       .counter {
         @extend %flex-center;
         position: absolute;
-        width: 9px;
-        height: 9px;
+        width: 13px;
+        height: 13px;
         background-color: #e23535;
         font-weight: 700;
-        font-size: 5px;
+        font-size: 9px;
         color: #ffffff;
         line-height: 6px;
         border-radius: 50%;
-        right: -7px;
-        bottom: 3px;
+        right: -9px;
+        bottom: -1px;
       }
     }
 
@@ -84,6 +76,7 @@
       padding: 8px 10px;
       border-radius: 45px;
       box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.1);
+      color: $body-color;
 
       &:hover {
         box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.2);
@@ -92,7 +85,6 @@
       > span {
         margin-left: 6px;
         width: 8px;
-        height: 8px;
         font-size: 10px;
         color: #3047c7;
       }

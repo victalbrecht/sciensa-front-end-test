@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 import { UiService } from '../../services/ui/ui.service';
 
@@ -9,6 +10,7 @@ import { UiService } from '../../services/ui/ui.service';
 })
 export class NavbarComponent implements OnInit {
   public showingValues: boolean;
+  public accountId: BehaviorSubject<number> = this.uiService.accountId;
 
   public constructor(private uiService: UiService) {}
 

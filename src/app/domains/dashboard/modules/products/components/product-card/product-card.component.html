@@ -1,0 +1,117 @@
+<section
+  class="product-card"
+  [ngClass]="[
+    'product-card-' + (productData.index + 1),
+    expandedCard ? 'expanded-card' : ''
+  ]"
+>
+  <div class="first-section">
+    <div class="info-wrapper">
+      <h4>% na carteira</h4>
+      <span>{{ productData.product.porcentagemCarteira }}%</span>
+    </div>
+    <div class="info-wrapper">
+      <h4>Produto</h4>
+      <span>{{ productData.product.produto }}</span>
+    </div>
+    <div class="info-wrapper">
+      <h4>Quantidade</h4>
+      <span>{{ productData.product.qtdAtivos }} ativos</span>
+    </div>
+  </div>
+  <div class="second-section">
+    <div class="info-wrapper">
+      <h4>Saldo bruto</h4>
+      <span>{{
+        productData.product.valorBruto | preCurrency | currency: "BRL"
+      }}</span>
+    </div>
+    <div class="info-wrapper">
+      <h4>Saldo líquido</h4>
+      <span>{{
+        productData.product.valorLiquido | preCurrency | currency: "BRL"
+      }}</span>
+    </div>
+    <a
+      type="button"
+      class="expand-card-btn"
+      (click)="expandedCard = !expandedCard"
+    >
+      <span
+        class="fas"
+        [ngClass]="expandedCard ? 'fa-angle-down' : 'fa-plus'"
+      ></span>
+    </a>
+  </div>
+</section>
+<ng-container *ngIf="expandedCard">
+  <section
+    class="assets-filters-card"
+    [ngClass]="{ 'justify-content-end': openedFilters }"
+  >
+    <a
+      type="button"
+      class="toggle-filters"
+      (click)="openedFilters = !openedFilters"
+    >
+      <span
+        class="fas"
+        [ngClass]="openedFilters ? 'fa-filter' : 'fa-funnel-dollar'"
+      ></span>
+      <h6>
+        {{ openedFilters ? ("Fechar filtros" | uppercase) : "Abrir filtros" }}
+      </h6>
+    </a>
+    <div class="filters" *ngIf="openedFilters"></div>
+  </section>
+  <section class="assets-table-card" *ngIf="expandedCard">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <h5>% na carteira</h5>
+          </th>
+          <th>
+            <h5>Ativo/classificação</h5>
+          </th>
+          <th>
+            <h5>Qtd.</h5>
+          </th>
+          <th>
+            <h5>Data posição</h5>
+          </th>
+          <th>
+            <h5>Taxa/index.</h5>
+          </th>
+          <th>
+            <h5>Emissor</h5>
+          </th>
+          <th>
+            <h5>Vencimento</h5>
+          </th>
+          <th>
+            <h5>R$ bruto</h5>
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let asset of productData.product.listaAtivos">
+          <td>{{ asset.porcentagem }}%</td>
+          <td>{{ asset.ativo }}</td>
+          <td>{{ asset.quantidade }}</td>
+          <td>{{ asset.dataPosicao }}</td>
+          <td>{{ asset.taxa }}% do CDI</td>
+          <td>{{ asset.emissor }}</td>
+          <td>{{ asset.dataVencimento }}</td>
+          <td>{{ asset.valorBruto | currency: "BRL" : "" }}</td>
+          <td>
+            <button type="button" class="btn btn-success invest-btn">Investir</button>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</ng-container>

@@ -1,0 +1,155 @@
+$product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
+
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 32px 5px 15px;
+  background: #ffffff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+
+  &:not(.expanded-card) {
+    margin-bottom: 32px;
+  }
+
+  @each $border-color in $product-card-borders {
+    &-#{index($product-card-borders, $border-color)} {
+      border-left: 4px solid $border-color;
+    }
+  }
+
+  .first-section,
+  .second-section {
+    display: flex;
+  }
+
+  .first-section > .info-wrapper {
+    &:nth-child(1) {
+      min-width: 82px;
+    }
+
+    &:nth-child(2) {
+      min-width: 190px;
+      margin-left: 24px;
+    }
+
+    &:nth-child(3) {
+      min-width: 73px;
+      margin-left: 24px;
+    }
+  }
+
+  .second-section {
+    display: flex;
+    align-items: center;
+
+    > .info-wrapper {
+      &:nth-child(1) {
+        min-width: 103px;
+      }
+
+      &:nth-child(2) {
+        min-width: 99px;
+        margin-left: 34px;
+      }
+    }
+
+    .expand-card-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 84px;
+      width: 24px;
+      height: 24px;
+      font-size: 8px;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  .info-wrapper > h4 + span {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+  }
+}
+
+.assets-filters-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 12px 24px;
+  background: #ffffff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+
+  .toggle-filters {
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    &:hover {
+      &,
+      > span {
+        color: lighten(#000000, 40%);
+      }
+    }
+
+    > span {
+      margin-right: 8px;
+    }
+  }
+}
+
+.assets-table-card {
+  .table {
+    th,
+    td {
+      min-width: 100px;
+      max-width: 100px;
+      padding: 8px;
+
+      &:nth-child(1) {
+        padding-left: 16px;
+        padding-right: 5px;
+      }
+
+      &:nth-child(2) {
+        min-width: 220px;
+        max-width: 220px;
+      }
+
+      &:nth-child(3) {
+        min-width: 75px;
+        max-width: 75px;
+      }
+
+      &:nth-child(8),
+      &:nth-child(9) {
+        min-width: 150px;
+        max-width: 150px;
+      }
+    }
+
+    td {
+      padding: 16px 8px;
+
+      &:nth-child(1) {
+        padding-left: 16px;
+        padding-right: 55px;
+      }
+    }
+
+    .invest-btn {
+        padding: 11px 17px;
+    }
+  }
+
+  margin-bottom: 32px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+}

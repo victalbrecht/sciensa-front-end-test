@@ -1,5 +1,5 @@
 <main>
-  <header>
+  <header class="dashboard-wrapper">
     <nav class="dashboard">
       <ul class="tabs">
         <li routerLink="overview" routerLinkActive="active">Visão geral</li>
@@ -10,12 +10,12 @@
           Avaliação de parceiros
         </li>
       </ul>
-      <button class="btn btn-outline-primary wallet-btn">
+      <button type="button" class="btn btn-outline-primary wallet-btn">
         Monte sua carteira
       </button>
     </nav>
   </header>
-  <div class="dash">
+  <section class="dash">
     <router-outlet></router-outlet>
-  </div>
+  </section>
 </main>

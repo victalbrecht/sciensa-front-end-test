@@ -1,9 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AccountNumberPipe } from './pipes/account-number/account-number.pipe';
+import { PreCurrencyPipe } from './pipes/pre-currency/pre-currency.pipe';
+import { HideValueDirective } from './directives/hide-value.directive';
+
+const shared: Array<any> = [
+  AccountNumberPipe,
+  PreCurrencyPipe,
+  HideValueDirective,
+];
+
 @NgModule({
-  declarations: [],
+  declarations: shared,
   imports: [CommonModule],
-  exports: []
+  exports: shared,
 })
-export class SharedModule { }
+export class SharedModule {}

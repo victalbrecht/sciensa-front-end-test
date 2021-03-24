@@ -3,7 +3,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 * {
-  line-height: 21px;
+  line-height: $default-line-height;
 
   &:not(input) {
     user-select: none;
@@ -11,7 +11,36 @@
 }
 
 body {
-  margin-top: $navbar-height;
+  padding-top: $navbar-height;
+}
+
+a {
+  cursor: pointer;
+  transition: box-shadow $standard-transition, color $standard-transition;
+}
+
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h4 {
+  font-weight: $h4-font-weight;
+  font-size: $h4-font-size;
+  line-height: $h4-line-height;
+}
+
+h5 {
+  font-weight: $h5-font-weight;
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+}
+
+h6 {
+  font-weight: $h6-font-weight;
+  font-size: $h6-font-size;
+  line-height: $h6-line-height;
 }
 
 ul {
@@ -69,4 +98,31 @@ ul {
   text-transform: $btn-text-transform;
   letter-spacing: $btn-letter-specing;
   box-shadow: $btn-focus-box-shadow;
+}
+
+.far,
+.fas,
+.fa {
+  color: $dark;
+  transition: color $standard-transition;
+}
+
+.table {
+  tr {
+    background-color: $table-bg-1;
+
+    &:nth-child(even) {
+      background-color: $table-bg-2;
+    }
+  }
+
+  thead tr {
+    background-color: $table-header-bg;
+  }
+
+  tbody {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+  }
 }

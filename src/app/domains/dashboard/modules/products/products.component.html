@@ -1,5 +1,16 @@
-<section>
-  <header class="products-header">
-      <div class="d-flex"></div>
-  </header>
-</section>
+<div class="products-header">
+  <div class="text-wrapper">
+    <span class="text-one">Posição detalhada</span>
+    <span class="text-two"> Cheque seus investimentos por produto. </span>
+  </div>
+  <div class="export-button-wrapper">
+    <a type="button" class="export-button">
+      <span class="far fa-file-pdf"></span>
+      Exportar pdf
+    </a>
+  </div>
+</div>
+<sciensa-test-product-card
+  *ngFor="let product of products | async; let i = index"
+  [productData]="{ product: product, index: i }"
+></sciensa-test-product-card>
