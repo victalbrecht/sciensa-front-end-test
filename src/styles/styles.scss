@@ -13,7 +13,7 @@
 body {
   padding-top: $navbar-height;
   scrollbar-width: none;
-  
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -114,7 +114,7 @@ ul {
 
 .table {
   margin-bottom: 0;
-  
+
   tr {
     background-color: $table-base-bg;
   }
@@ -127,5 +127,27 @@ ul {
     font-size: 16px;
     font-weight: 300;
     line-height: 24px;
+  }
+}
+
+.form-check {
+  padding-left: 0;
+
+  &-inline {
+    margin: 0;
+
+    & + .form-check {
+      margin-left: $form-check-inline-margin;
+    }
+  }
+
+  &-input {
+    height: $form-check-radio-input-height;
+    width: $form-check-radio-input-width;
+    margin: 0 !important;
+  }
+
+  &-label {
+    margin-left: $form-check-label-margin;
   }
 }

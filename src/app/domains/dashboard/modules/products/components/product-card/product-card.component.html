@@ -63,9 +63,269 @@
       </a>
     </div>
     <div class="filters" *ngIf="openFilters" @collapse>
-      <div class="d-flex">
+      <div class="first-section">
         <div class="filter-wrapper">
           <span class="filter-title">Perfil do investimento:</span>
+          <div class="filter-options">
+            <div class="investment-type">
+              <input type="radio" id="CO" name="investment-type" value="CO" />
+              <label for="CO">CO</label>
+            </div>
+            <div class="investment-type">
+              <input type="radio" id="MO" name="investment-type" value="MO" />
+              <label for="MO">MO</label>
+            </div>
+            <div class="investment-type">
+              <input type="radio" id="AR" name="investment-type" value="AR" />
+              <label for="AR">AR</label>
+            </div>
+            <div class="investment-type">
+              <input type="radio" id="AG" name="investment-type" value="AG" />
+              <label for="AG">AG</label>
+            </div>
+          </div>
+        </div>
+        <div class="filter-wrapper">
+          <span class="filter-title">Mercado:</span>
+          <div class="filter-options">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="market-type"
+                id="Primário"
+                value="Primário"
+              />
+              <label class="form-check-label" for="Primário">Primário</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="market-type"
+                id="Secundário"
+                value="Secundário"
+              />
+              <label class="form-check-label" for="Secundário"
+                >Secundário</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="filter-wrapper">
+          <span class="filter-title">&nbsp;</span>
+          <div class="filter-options">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="CDB"
+                id="CDB"
+                value="CDB"
+              />
+              <label class="form-check-label" for="CDB">CDB</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="LCA"
+                id="LCA"
+                value="LCA"
+              />
+              <label class="form-check-label" for="LCA">LCA</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="LC"
+                id="LC"
+                value="LC"
+              />
+              <label class="form-check-label" for="LC">LC</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="LF"
+                id="LF"
+                value="LF"
+              />
+              <label class="form-check-label" for="LF">LF</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="DEBENTURE"
+                id="DEBENTURE"
+                value="DEBENTURE"
+              />
+              <label class="form-check-label" for="DEBENTURE">DEBENTURE</label>
+            </div>
+          </div>
+          <div class="filter-options">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="LCI"
+                id="LCI"
+                value="LCI"
+              />
+              <label class="form-check-label" for="LCI">LCI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="CRA"
+                id="CRA"
+                value="CRA"
+              />
+              <label class="form-check-label" for="CRA">CRA</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="CRI"
+                id="CRI"
+                value="CRI"
+              />
+              <label class="form-check-label" for="CRI">CRI</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Título Público"
+                id="Título Público"
+                value="Título Público"
+              />
+              <label class="form-check-label" for="Título Público"
+                >Título Público</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="filter-wrapper">
+          <span class="filter-title">Tipos de produto:</span>
+          <div class="filter-options">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="PreFixado"
+                id="PreFixado"
+                value="PreFixado"
+              />
+              <label class="form-check-label" for="PreFixado">PreFixado</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="CDI"
+                id="CDI"
+                value="CDI"
+              />
+              <label class="form-check-label" for="CDI">CDI</label>
+            </div>
+          </div>
+          <div class="filter-options">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="IPCA"
+                id="IPCA"
+                value="IPCA"
+              />
+              <label class="form-check-label" for="IPCA">IPCA</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="IGPM"
+                id="IGPM"
+                value="IGPM"
+              />
+              <label class="form-check-label" for="IGPM">IGPM</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="TR"
+                id="TR"
+                value="TR"
+              />
+              <label class="form-check-label" for="TR">TR</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="second-section">
+        <div class="input-group search-input">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Pesquise por cliente"
+          />
+        </div>
+        <div class="btn-toolbar">
+          <div class="btn-group">
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-up"></span>
+              <span class="symbol">%</span>
+            </button>
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-down"></span>
+              <span class="symbol">%</span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-up"></span>
+              <span class="symbol">$</span>
+            </button>
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-down"></span>
+              <span class="symbol">$</span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-filter">
+              <span class="symbol">A-Z</span>
+            </button>
+            <button type="button" class="btn btn-filter">
+              <span class="symbol">Z-A</span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-up"></span>
+              <span class="symbol">C</span>
+            </button>
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-down"></span>
+              <span class="symbol">C</span>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-up"></span>
+              <span class="symbol">V</span>
+            </button>
+            <button type="button" class="btn btn-filter">
+              <span class="fas fa-arrow-down"></span>
+              <span class="symbol">V</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

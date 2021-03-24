@@ -1,6 +1,7 @@
 @import "src/styles/variables";
 
 $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
+$investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
 
 .product-card {
   display: flex;
@@ -106,10 +107,132 @@ $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
   }
 
   .filters {
-    .filter-wrapper {
+    .first-section,
+    .second-section {
       display: flex;
-      flex-direction: column;
       color: #000000;
+    }
+
+    .first-section {
+      margin-bottom: 36px;
+
+      .filter-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 80px;
+
+        .filter-title {
+          margin-bottom: 8px;
+        }
+
+        .filter-options {
+          display: flex;
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 27px;
+
+          & + .filter-options {
+            margin-top: 16px;
+          }
+
+          .investment-type {
+            & + .investment-type {
+              margin-left: 4px;
+            }
+
+            input {
+              display: none;
+            }
+
+            label {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 24px;
+              height: 24px;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 19px;
+              border-radius: 50%;
+              cursor: pointer;
+              transition: $standard-transition;
+            }
+
+            @each $color in $investment-profiles-colors {
+              &:nth-child(#{index($investment-profiles-colors, $color)}) input {
+                + label {
+                  border: 1px solid $color;
+                  color: $color;
+                }
+
+                &:checked + label {
+                  background-color: $color;
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
+
+        & + .filter-wrapper {
+          margin-left: 16px;
+          padding-left: 16px;
+          border-left: 1px solid #dadada;
+        }
+      }
+    }
+
+    .second-section {
+      .input-group {
+        width: 242px;
+      }
+
+      .btn {
+        &-toolbar {
+          margin-left: 16px;
+        }
+
+        &-group + .btn-group {
+          margin-left: 4px;
+        }
+
+        &-filter {
+          width: 36px;
+          height: 36px;
+          background: #ffffff;
+          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+
+          &:hover {
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+          }
+
+          &:nth-child(1) {
+            border-radius: 5px 0px 0px 5px;
+          }
+
+          &:nth-child(2) {
+            border-radius: 0px 5px 5px 0px;
+          }
+
+          span {
+            color: #000000;
+
+            &:first-of-type {
+              font-size: 8px;
+            }
+
+            &.symbol {
+              margin-left: 2px;
+              font-size: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }
