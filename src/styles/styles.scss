@@ -79,6 +79,7 @@ ul {
     .form-control {
       height: auto;
       padding: 8px 56px 9px 24px;
+      max-height: $input-height;
     }
 
     &::after {

@@ -37,8 +37,8 @@
       > span {
         @extend %flex-center;
         margin-left: 13px;
-        width: 18px;
-        height: 18px;
+        min-width: 18px;
+        min-height: 18px;
         color: #ffffff;
         background-color: #dadada;
         border-radius: 50%;
@@ -57,8 +57,8 @@
       .counter {
         @extend %flex-center;
         position: absolute;
-        width: 13px;
-        height: 13px;
+        min-width: 13px;
+        min-height: 13px;
         background-color: #e23535;
         font-weight: 700;
         font-size: 9px;
@@ -84,7 +84,7 @@
 
       > span {
         margin-left: 6px;
-        width: 8px;
+        min-width: 8px;
         font-size: 10px;
         color: #3047c7;
       }
@@ -92,8 +92,8 @@
 
     .avatar {
       @extend %flex-center;
-      width: 30px;
-      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
       border-radius: 50%;
       color: #ffffff;
       font-weight: 700;
@@ -104,6 +104,23 @@
 
       &:hover {
         box-shadow: 0px 4px 15px rgba(54, 77, 205, 0.2);
+      }
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .navbar {
+    height: 120px;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 6px;
+
+    &-panel {
+      flex-wrap: wrap;
+
+      .notifications, .info {
+        margin-left: 12px !important;
       }
     }
   }

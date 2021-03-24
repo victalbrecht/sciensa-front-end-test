@@ -61,3 +61,24 @@
 .dash {
   padding: 23px 120px 80px;
 }
+
+@media (max-width: 700px) {
+  .dashboard {
+    padding-bottom: 12px;
+    flex-direction: column;
+    align-items: center;
+
+    .tabs {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .dash {
+    padding: 23px 20px 80px;
+  }
+}
