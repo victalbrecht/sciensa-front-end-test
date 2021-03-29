@@ -1,0 +1,83 @@
+@import "src/styles/variables";
+
+.assets-table-card {
+  transition: margin-bottom 0.3s ease-in-out;
+  margin-bottom: 32px;
+  box-shadow: $default-box-shadow;
+}
+
+.table {
+  table-layout: fixed;
+
+  th {
+    padding: 8px 0 8px 8px;
+  }
+
+  td {
+    padding: 16px 0 16px 8px;
+  }
+
+  th,
+  td {
+    width: 100px;
+
+    &:nth-child(1) {
+      padding-left: 16px;
+    }
+
+    &:nth-child(2) {
+      width: 220px;
+    }
+
+    &:nth-child(8) {
+      width: 150px;
+    }
+
+    &:nth-child(9) {
+      width: 100px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &:nth-child(10) {
+      width: 88px;
+    }
+  }
+
+  td:nth-child(10) {
+    padding: 28px 32px;
+
+    > a {
+      float: right;
+    }
+  }
+}
+
+.assets-table {
+  tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  .clients-table {
+    border-top: 2px solid #ebebeb;
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    td:nth-child(9) {
+      padding: 8px 0;
+    }
+
+    .middle-row {
+      background-color: $table-header-bg;
+      border-top: 5px solid #ffffff;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .assets-table-card {
+    overflow-x: scroll;
+  }
+}

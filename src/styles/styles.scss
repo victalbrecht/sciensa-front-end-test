@@ -98,12 +98,21 @@ ul {
 }
 
 .btn,
-.btn:hover,
-.btn:focus {
-  color: $btn-color;
-  text-transform: $btn-text-transform;
+.btn:focus,
+.btn:hover {
+  text-transform: uppercase;
   letter-spacing: $btn-letter-specing;
-  box-shadow: $btn-focus-box-shadow;
+  box-shadow: $btn-box-shadow;
+  color: $btn-color;
+
+  &:focus,
+  &:hover {
+    box-shadow: $btn-focus-box-shadow;
+  }
+}
+
+.btn-light, .btn-light:hover {
+  color: $body-color;
 }
 
 .far,
@@ -150,5 +159,21 @@ ul {
 
   &-label {
     margin-left: $form-check-label-margin;
+  }
+}
+
+.row-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  font-size: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.2);
   }
 }

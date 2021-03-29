@@ -1,0 +1,136 @@
+<section class="assets-table-card">
+  <table class="table assets-table">
+    <thead>
+      <tr>
+        <th>
+          <h5>% na carteira</h5>
+        </th>
+        <th>
+          <h5>Ativo/classificação</h5>
+        </th>
+        <th>
+          <h5>Qtd.</h5>
+        </th>
+        <th>
+          <h5>Data posição</h5>
+        </th>
+        <th>
+          <h5>Taxa/index.</h5>
+        </th>
+        <th>
+          <h5>Emissor</h5>
+        </th>
+        <th>
+          <h5>Vencimento</h5>
+        </th>
+        <th>
+          <h5>R$ bruto</h5>
+        </th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container
+        *ngFor="let asset of productData.product.listaAtivos; let i = index"
+      >
+        <tr>
+          <td>{{ asset.porcentagem }}%</td>
+          <td>{{ asset.ativo }}</td>
+          <td>{{ asset.quantidade }}</td>
+          <td>{{ asset.dataPosicao | customDate }}</td>
+          <td>{{ asset.taxa }}% do CDI</td>
+          <td>{{ asset.emissor }}</td>
+          <td>{{ asset.dataVencimento | customDate }}</td>
+          <td>
+            <span [hideValue]="hidingValues | async">{{
+              asset.valorBruto | currency: "BRL":""
+            }}</span>
+          </td>
+          <td>
+            <button type="button" class="btn btn-success">Investir</button>
+          </td>
+          <td>
+            <a
+              type="button"
+              class="row-action-btn"
+              (click)="asset.showingClients = !asset.showingClients"
+            >
+              <span
+                class="fas"
+                [ngClass]="asset.showingClients ? 'fa-angle-down' : 'fa-plus'"
+              ></span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="10" class="p-0" *ngIf="asset.showingClients">
+            <table class="table clients-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th><h5>Cliente</h5></th>
+                  <th><h5>Qtd.</h5></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th><h5>R$ bruto</h5></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngIf="asset.listaClientes.length">
+                  <tr *ngFor="let client of asset.listaClientes">
+                    <td>{{ client.porcentagem }}%</td>
+                    <td class="text-decoration-underline">
+                      {{ client.nomeCliente }}
+                    </td>
+                    <td>{{ client.quantidade }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <span [hideValue]="hidingValues | async">{{
+                        client.valorBruto | currency: "BRL":""
+                      }}</span>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-success">
+                        Investir
+                      </button>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr
+                    class="middle-row"
+                    *ngIf="i < asset.listaClientes.length - 1"
+                  >
+                    <th></th>
+                    <th><h5>Ativo/classificação</h5></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </ng-container>
+                <tr *ngIf="!asset.listaClientes.length">
+                  <td colspan="10" class="text-center py-5">Tabela vazia</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </ng-container>
+      <tr *ngIf="!productData.product.listaAtivos.length">
+        <td colspan="10" class="text-center py-5">Tabela vazia</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
