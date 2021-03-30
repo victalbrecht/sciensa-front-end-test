@@ -7,7 +7,7 @@ $investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
   margin-top: 4px;
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-  transition: padding $standard-transition;
+  transition: padding $transition-base;
 
   &.open-filters {
     padding: 16px 24px 24px;
@@ -97,7 +97,7 @@ $investment-profiles-colors: #7ca1c0, #28388f, #0c0b38, #3c62fb;
               line-height: 19px;
               border-radius: 50%;
               cursor: pointer;
-              transition: $standard-transition;
+              transition: $transition-base;
             }
 
             @each $color in $investment-profiles-colors {

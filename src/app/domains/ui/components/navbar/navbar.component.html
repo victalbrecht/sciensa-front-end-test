@@ -1,29 +1,55 @@
 <header>
-  <nav class="navbar fixed-top">
-    <div class="input-group search-input">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="O que você procura?"
-      />
-    </div>
-    <div class="navbar-panel">
-      <a type="button" class="hide-values panel-group" (click)="toggleValues()">
-        {{ !hidingValues ? "Esconder" : "Mostrar" }} valores
-        <span
-          class="far"
-          [ngClass]="!hidingValues ? 'fa-eye-slash' : 'fa-eye'"
-        ></span>
-      </a>
-      <a type="button" class="notifications">
-        <span class="far fa-bell"></span>
-        <div class="counter">1</div>
-      </a>
-      <a type="button" class="info panel-group">
-        CC {{ accountId | async | accountNumber }}
-        <span class="fas fa-chevron-down"></span>
-      </a>
-      <a type="button" class="avatar">AP</a>
+  <nav class="navbar fixed-top navbar-expand-sm">
+    <div class="container-fluid justify-content-end justify-content-sm-center">
+      <button
+        class="navbar-toggler btn d-flex d-sm-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar"
+      >
+        <span class="fas fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="row w-100">
+          <div
+            class="col-sm-12 col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+          >
+            <div class="input-group search-input">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="O que você procura?"
+              />
+            </div>
+          </div>
+          <div
+            class="col-sm-12 col-md-8 d-flex justify-content-center justify-content-md-end"
+          >
+            <div class="navbar-panel">
+              <a
+                type="button"
+                class="hide-values panel-group"
+                (click)="toggleValues()"
+              >
+                {{ !hidingValues ? "Esconder" : "Mostrar" }} valores
+                <span
+                  class="far"
+                  [ngClass]="!hidingValues ? 'fa-eye-slash' : 'fa-eye'"
+                ></span>
+              </a>
+              <a type="button" class="notifications">
+                <span class="far fa-bell"></span>
+                <div class="counter">1</div>
+              </a>
+              <a type="button" class="info panel-group">
+                CC {{ accountId | async | accountNumber }}
+                <span class="fas fa-chevron-down"></span>
+              </a>
+              <a type="button" class="avatar">AP</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 </header>

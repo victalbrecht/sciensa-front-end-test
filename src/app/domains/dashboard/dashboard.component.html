@@ -1,21 +1,49 @@
 <main>
-  <header class="dashboard-wrapper">
-    <nav class="dashboard">
-      <ul class="tabs">
-        <li routerLink="overview" routerLinkActive="active">Visão geral</li>
-        <li routerLink="products" routerLinkActive="active">Produtos</li>
-        <li routerLink="revenues" routerLinkActive="active">Receitas</li>
-        <li routerLink="clients" routerLinkActive="active">Clientes</li>
-        <li routerLink="partners-assessment" routerLinkActive="active">
-          Avaliação de parceiros
-        </li>
-      </ul>
-      <button type="button" class="btn btn-outline-info wallet-btn">
-        Monte sua carteira
-      </button>
+  <header class="dashboard-wrapper mt-2 mt-sm-0">
+    <nav class="dashboard navbar-expand-sm">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3 col-sm-12 col-md-8">
+            <div class="navbar-toggler-wrapper d-sm-none">
+              <button
+                class="navbar-toggler btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-bar"
+              >
+                <span class="fas fa-bars"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse d-sm-flex justify-content-sm-center justify-content-md-start" id="dashboard-bar">
+              <ul class="tabs navbar-nav d-flex align-items-start align-items-md-center">
+                <li routerLink="overview" routerLinkActive="active" class="mb-3 mb-sm-0">
+                  Visão geral
+                </li>
+                <li routerLink="products" routerLinkActive="active" class="mb-3 mb-sm-0">
+                  Produtos
+                </li>
+                <li routerLink="revenues" routerLinkActive="active" class="mb-3 mb-sm-0">
+                  Receitas
+                </li>
+                <li routerLink="clients" routerLinkActive="active" class="mb-3 mb-sm-0">Clientes</li>
+                <li routerLink="partners-assessment" routerLinkActive="active">
+                  Avaliação de parceiros
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-9 col-sm-12 col-md-4 d-flex justify-content-end justify-content-sm-center justify-content-md-end">
+            <div class="wallet-btn-wrapper">
+              <button type="button" class="btn btn-outline-info wallet-btn">
+                Monte sua carteira
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
   <section class="dash">
-    <router-outlet></router-outlet>
+    <!-- <router-outlet></router-outlet> -->
   </section>
 </main>

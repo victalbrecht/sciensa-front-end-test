@@ -21,7 +21,7 @@ body {
 
 a {
   cursor: pointer;
-  transition: box-shadow $standard-transition, color $standard-transition;
+  transition: box-shadow $transition-base, color $transition-base;
 }
 
 h4,
@@ -62,7 +62,7 @@ ul {
   .form-control {
     height: $input-height;
     box-shadow: $input-box-shadow;
-    transition: box-shadow $standard-transition;
+    transition: box-shadow $transition-base;
 
     &::placeholder {
       font-style: $input-placeholder-font-style;
@@ -111,15 +111,25 @@ ul {
   }
 }
 
-.btn-light, .btn-light:hover {
-  color: $body-color;
+.btn-light {
+  &, &:focus, &:hover {
+    color: $body-color;
+  }
+}
+
+.navbar-toggler {
+  border-radius: 4px;
+
+  &-wrapper {
+    padding: 10px 24px;
+  }
 }
 
 .far,
 .fas,
 .fa {
   color: $dark;
-  transition: color $standard-transition;
+  transition: color $transition-base;
 }
 
 .table {
