@@ -5,46 +5,60 @@
     expandedCard ? 'expanded-card' : ''
   ]"
 >
-  <div class="first-section">
-    <div class="info-wrapper">
-      <h4>% na carteira</h4>
-      <span>{{ productData.product.porcentagemCarteira }}%</span>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-1 col-xl-1 col-xxl-1 mb-2 mb-lg-0">
+        <div class="info-wrapper">
+          <h4>% na carteira</h4>
+          <span>{{ productData.product.porcentagemCarteira }}%</span>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-5 col-lg-3 col-xl-3 col-xxl-2 mb-2 mb-lg-0">
+        <div class="info-wrapper">
+          <h4>Produto</h4>
+          <span>{{ productData.product.produto }}</span>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-4 col-xxl-4 mb-2 mb-lg-0">
+        <div class="info-wrapper">
+          <h4>Quantidade</h4>
+          <span>{{ productData.product.qtdAtivos }} ativos</span>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 col-xxl-2 mb-2 mb-md-0 align-items-xxl-end">
+        <div class="info-wrapper">
+          <h4>Saldo bruto</h4>
+          <span [hideValue]="hidingValues | async">{{
+            productData.product.valorBruto | preCurrency | currency: "BRL"
+          }}</span>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-1 col-xxl-2 mb-2 mb-sm-0 align-items-xxl-end">
+        <div class="info-wrapper">
+          <h4>Saldo líquido</h4>
+          <span [hideValue]="hidingValues | async">{{
+            productData.product.valorLiquido | preCurrency | currency: "BRL"
+          }}</span>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-1 col-xl-2 col-xxl-1 mb-2 mb-sm-0">
+        <a
+          type="button"
+          class="row-action-btn align-self-end"
+          (click)="expandedCard = !expandedCard"
+        >
+          <span
+            class="fas"
+            [ngClass]="expandedCard ? 'fa-angle-down' : 'fa-plus'"
+          ></span>
+        </a>
+      </div>
     </div>
-    <div class="info-wrapper">
-      <h4>Produto</h4>
-      <span>{{ productData.product.produto }}</span>
-    </div>
-    <div class="info-wrapper">
-      <h4>Quantidade</h4>
-      <span>{{ productData.product.qtdAtivos }} ativos</span>
-    </div>
-  </div>
-  <div class="second-section">
-    <div class="info-wrapper">
-      <h4>Saldo bruto</h4>
-      <span [hideValue]="hidingValues | async">{{
-        productData.product.valorBruto | preCurrency | currency: "BRL"
-      }}</span>
-    </div>
-    <div class="info-wrapper">
-      <h4>Saldo líquido</h4>
-      <span [hideValue]="hidingValues | async">{{
-        productData.product.valorLiquido | preCurrency | currency: "BRL"
-      }}</span>
-    </div>
-    <a
-      type="button"
-      class="row-action-btn"
-      (click)="expandedCard = !expandedCard"
-    >
-      <span
-        class="fas"
-        [ngClass]="expandedCard ? 'fa-angle-down' : 'fa-plus'"
-      ></span>
-    </a>
   </div>
 </section>
 <div *ngIf="expandedCard" @collapse>
   <sciensa-test-filters-card></sciensa-test-filters-card>
-  <sciensa-test-assets-table-card [productData]="productData"></sciensa-test-assets-table-card>
+  <sciensa-test-assets-table-card
+    [productData]="productData"
+  ></sciensa-test-assets-table-card>
 </div>

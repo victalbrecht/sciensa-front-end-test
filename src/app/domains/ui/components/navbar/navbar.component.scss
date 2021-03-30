@@ -106,6 +106,8 @@
       @extend %flex-center;
       min-width: 30px;
       min-height: 30px;
+      max-width: 30px;
+      max-height: 30px;
       border-radius: 50%;
       color: #ffffff;
       font-weight: 700;
