@@ -55,7 +55,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .products-header .export-button {
     margin-right: 0;
   }

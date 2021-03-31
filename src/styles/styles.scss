@@ -164,11 +164,7 @@ ul {
   &-input {
     height: $form-check-radio-input-height;
     width: $form-check-radio-input-width;
-    margin: 0 !important;
-  }
-
-  &-label {
-    margin-left: $form-check-label-margin;
+    margin: 0 $form-check-label-margin 0 0 !important; 
   }
 }
 

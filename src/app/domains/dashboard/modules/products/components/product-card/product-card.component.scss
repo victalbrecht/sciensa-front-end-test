@@ -63,7 +63,7 @@ $product-card-borders: #3d46f2, #000d50, #0099ff, #37dcf6, #9cb1c9;
   }
 }
 
-@media (max-width: 1005px) {
+@media only screen and (max-width: 991px) {
   .product-card .row > div:nth-child(n) > .info-wrapper {
     margin: 0;
   }
