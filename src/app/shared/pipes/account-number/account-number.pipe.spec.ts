@@ -7,9 +7,10 @@ describe('AccountNumberPipe', () => {
     expect(accountNumberPipe).toBeTruthy();
   });
 
-  it('should put a dash before the last digit of a given number', () => {
-    expect(accountNumberPipe.transform(4534522)).toBe('453452-2');
-    expect(accountNumberPipe.transform(56756734528)).toBe('5675673452-8');
-    expect(accountNumberPipe.transform(12)).toBe('1-2');
+  it('should format a given account number', () => {
+    expect(accountNumberPipe.transform(4534522)).toBe('CC 453452-2');
+    expect(accountNumberPipe.transform(56756734528)).toBe('CC 5675673452-8');
+    expect(accountNumberPipe.transform(12)).toBe('CC 1-2');
+    expect(accountNumberPipe.transform(null)).toBe(null);
   });
 });

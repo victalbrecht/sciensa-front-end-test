@@ -4,6 +4,7 @@ import {
   TestRequest,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { take } from 'rxjs/operators';
 
 import { MockData } from 'src/app/domains/dashboard/interfaces/mock-data.interface';
 import { environment } from 'src/environments/environment';
@@ -42,7 +43,7 @@ describe('ProductsService', () => {
       HttpTestingController
     );
 
-    productsService.getMockData().subscribe((mockData: MockData) => {
+    productsService.getMockData().pipe(take(1)).subscribe((mockData: MockData) => {
       expect(mockData.idConta).toBe(3465436);
       expect(mockData.produtos[0].produto).toBe('testing');
     });

@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <ng-container
-          *ngFor="let asset of productData.product.listaAtivos; let i = index"
+          *ngFor="let asset of productData?.product?.listaAtivos; let i = index"
         >
           <tr>
             <td>{{ asset.porcentagem }}%</td>
@@ -82,7 +82,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <ng-container *ngIf="asset.listaClientes.length">
+                  <ng-container *ngIf="asset?.listaClientes?.length">
                     <tr *ngFor="let client of asset.listaClientes">
                       <td>{{ client.porcentagem }}%</td>
                       <td class="text-decoration-underline">
@@ -129,7 +129,7 @@
             </td>
           </tr>
         </ng-container>
-        <tr *ngIf="!productData.product.listaAtivos.length">
+        <tr *ngIf="!productData?.product?.listaAtivos?.length">
           <td colspan="10" class="text-center py-5">Tabela vazia</td>
         </tr>
       </tbody>

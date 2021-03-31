@@ -78,4 +78,12 @@ describe('AssetsTableCardComponent', () => {
     clientsTableRecordsRef = fixture.debugElement.queryAll(By.css('.clients-table tbody tr'));
     expect(clientsTableRecordsRef.length).toBe(3);
   });
+
+  it('should show empty table message', () => {
+    component.productData = { product: null, index: null};
+    fixture.detectChanges();
+    const assetsTableRecordsRef: Array<DebugElement> = fixture.debugElement.queryAll(By.css('.assets-table tbody tr'));
+    expect(assetsTableRecordsRef.length).toBe(1);
+    expect(assetsTableRecordsRef[0].nativeElement.childNodes[0].innerText).toBe('Tabela vazia');
+  });
 });

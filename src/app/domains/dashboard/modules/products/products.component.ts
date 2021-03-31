@@ -12,7 +12,7 @@ import { ProductsService } from './services/products/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  public products: Array<Product>;
+  public products: Array<Product> = [];
 
   public constructor(
     private productsService: ProductsService,
@@ -24,8 +24,8 @@ export class ProductsComponent implements OnInit {
       .getMockData()
       .pipe(take(1))
       .subscribe((mockData: MockData) => {
-        this.products = mockData.produtos;
-        this.uiService.accountId.next(mockData.idConta);
+        this.products = mockData?.produtos;
+        this.uiService.accountId.next(mockData?.idConta);
       });
   }
 }
