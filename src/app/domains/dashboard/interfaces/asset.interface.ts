@@ -7,7 +7,7 @@ export interface Asset {
   dataPosicao: Date;
   taxa: string;
   indexador: string;
-  emissos: string;
+  emissor: string;
   dataVencimento: Date;
   valorBruto: number;
   listaClientes: Array<Client>;

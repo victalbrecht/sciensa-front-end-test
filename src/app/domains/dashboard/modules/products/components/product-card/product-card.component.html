@@ -56,7 +56,7 @@
     </div>
   </div>
 </section>
-<div *ngIf="expandedCard" @collapse>
+<div class="expanded-content" *ngIf="expandedCard" @collapse>
   <sciensa-test-filters-card></sciensa-test-filters-card>
   <sciensa-test-assets-table-card
     [productData]="productData"

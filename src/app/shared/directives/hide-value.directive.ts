@@ -10,7 +10,7 @@ export class HideValueDirective implements OnChanges {
 
   public ngOnChanges(): void {
     this.el.nativeElement.style.backgroundColor = this.hideValue
-      ? '#ebebeb'
+      ? 'rgb(235, 235, 235)'
       : 'initial';
     this.el.nativeElement.style.color = this.hideValue
       ? 'transparent'
